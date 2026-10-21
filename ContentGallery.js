@@ -93,8 +93,8 @@ export default function ContentGallery({ query = '', showCategories = false }) {
 
   return <View style={styles.gallery}>
     {showCategories && <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabs} contentContainerStyle={styles.tabsContent}>
-      <Button mode={category === '' ? 'contained' : 'outlined'} compact onPress={() => setCategory('')}>Todas</Button>
-      {categories.map(value => <Button key={value} mode={category === value ? 'contained' : 'outlined'} compact onPress={() => setCategory(value)}>{value}</Button>)}
+      <Button mode={category === '' ? 'contained' : 'outlined'} onPress={() => setCategory('')}>Todas</Button>
+      {categories.map(value => <Button key={value} mode={category === value ? 'contained' : 'outlined'} onPress={() => setCategory(value)}>{value}</Button>)}
     </ScrollView>}
     {user && !query && <Button icon="plus" mode="contained" style={styles.addButton} onPress={() => openForm()}>Adicionar conteúdo</Button>}
     {loading ? <ActivityIndicator style={styles.loading} color="#f3ad43" /> : items.length ? <ScrollView contentContainerStyle={styles.cardsContent}>

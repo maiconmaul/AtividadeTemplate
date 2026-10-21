@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   addButton: { marginHorizontal: 16, marginBottom: 8 },
   cards: { flex: 1 },
   cardsContent: { paddingHorizontal: 16, paddingBottom: 30 },
-  card: { marginTop: 8, marginBottom: 8, borderRadius: 14, backgroundColor: surface, overflow: 'hidden' },
+  card: { marginTop: 8, marginBottom: 8, borderRadius: 14, backgroundColor: surface },
   cardTitle: { color: text, fontWeight: '700' },
   cardSubtitle: { color: muted },
   cardCover: { height: 210, marginHorizontal: 12, borderRadius: 10 },
