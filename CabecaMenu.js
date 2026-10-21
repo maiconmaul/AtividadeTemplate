@@ -17,13 +17,32 @@ export function CabecalhoMenu() {
       <Avatar.Icon size={54} icon="account" style={styles.menuAvatar} />
       <View style={styles.menuUserInfo}>
         <Text variant="titleMedium" style={styles.menuName}>{user?.name || 'Visitante'}</Text>
-        <Text variant="bodySmall" style={styles.menuEmail} numberOfLines={1}>{user?.email || 'Conteúdo público'}</Text>
+        <Text
+          variant="bodySmall"
+          style={styles.menuEmail}
+          numberOfLines={1}
+        >{user?.email || 'Conteúdo público'}</Text>
       </View>
     </View>
     <Divider style={styles.menuDivider} />
     {user ? <>
-      <Button icon="account" contentStyle={styles.menuAction} textColor="#f2f2f5" onPress={() => open('Perfil')}>Minha conta</Button>
-      <Button icon="logout" contentStyle={styles.menuAction} textColor="#f2f2f5" onPress={async () => { await logout(); navigation.closeDrawer(); }}>Sair</Button>
-    </> : <Button icon="login" contentStyle={styles.menuAction} textColor="#f2f2f5" onPress={() => open('Acesso')}>Entrar / Cadastrar</Button>}
+      <Button
+        icon="account"
+        contentStyle={styles.menuAction}
+        textColor="#f2f2f5"
+        onPress={() => open('Perfil')}
+      >Minha conta</Button>
+      <Button
+        icon="logout"
+        contentStyle={styles.menuAction}
+        textColor="#f2f2f5"
+        onPress={async () => { await logout(); navigation.closeDrawer(); }}
+      >Sair</Button>
+    </> : <Button
+      icon="login"
+      contentStyle={styles.menuAction}
+      textColor="#f2f2f5"
+      onPress={() => open('Acesso')}
+    >Entrar / Cadastrar</Button>}
   </View>;
 }

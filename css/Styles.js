@@ -73,8 +73,10 @@ export const styles = StyleSheet.create({
     height: 42,
     paddingHorizontal: 18,
     marginHorizontal: 4,
+
     justifyContent: 'center',
     alignItems: 'center',
+
     backgroundColor: surface,
     borderRadius: 22,
   },
@@ -99,6 +101,7 @@ export const styles = StyleSheet.create({
   card: {
     marginTop: 8,
     marginBottom: 8,
+
     borderRadius: 14,
     backgroundColor: surface,
   },
@@ -118,6 +121,7 @@ export const styles = StyleSheet.create({
     height: 150,
     marginHorizontal: 12,
     borderRadius: 10,
+
     backgroundColor: '#252831',
     alignItems: 'center',
     justifyContent: 'center',
@@ -129,6 +133,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+
     paddingHorizontal: 8,
   },
   cardActionsGuest: {
@@ -166,6 +171,7 @@ export const styles = StyleSheet.create({
     color: text,
     textAlign: 'center',
     fontWeight: '700',
+
     marginBottom: 8,
   },
   accessText: {
@@ -190,11 +196,13 @@ export const styles = StyleSheet.create({
     color: text,
     textAlign: 'center',
     fontWeight: 'bold',
+
     marginTop: 28,
   },
   loginTexto: {
     color: muted,
     textAlign: 'center',
+
     marginTop: 5,
     marginBottom: 26,
   },
@@ -220,11 +228,13 @@ export const styles = StyleSheet.create({
     color: text,
     textAlign: 'center',
     fontWeight: 'bold',
+
     marginTop: 20,
   },
   cadastroTexto: {
     color: muted,
     textAlign: 'center',
+
     marginTop: 5,
     marginBottom: 20,
   },
@@ -277,6 +287,7 @@ export const styles = StyleSheet.create({
   profileContent: {
     flex: 1,
     alignItems: 'center',
+
     padding: 28,
     paddingTop: 50,
   },
@@ -295,6 +306,7 @@ export const styles = StyleSheet.create({
   profileNote: {
     color: muted,
     textAlign: 'center',
+
     marginVertical: 24,
     lineHeight: 22,
   },
@@ -305,6 +317,7 @@ export const styles = StyleSheet.create({
   // ========= MODAL DE CONTEÚDO ================
   modal: {
     backgroundColor: surface,
+
     margin: 20,
     padding: 20,
     borderRadius: 16,
@@ -320,6 +333,7 @@ export const styles = StyleSheet.create({
   modalActions: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
+
     gap: 8,
     marginTop: 12,
   },

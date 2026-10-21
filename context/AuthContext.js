@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { request } from '../api/client';
 
@@ -28,7 +28,7 @@ export function AuthProvider({ children }) {
     setSession(value);
   };
 
-  const value = useMemo(() => ({
+  const value = {
     session,
     user: session?.user || null,
     token: session?.token || null,
@@ -47,7 +47,7 @@ export function AuthProvider({ children }) {
       await AsyncStorage.removeItem(SESSION_KEY);
       setSession(null);
     },
-  }), [session, ready]);
+  };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
