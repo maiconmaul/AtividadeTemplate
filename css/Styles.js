@@ -6,6 +6,7 @@ const text = '#f2f2f5';
 const muted = '#a9acb6';
 
 export const styles = StyleSheet.create({
+  // ========= ESTILOS GERAIS ================
   screen: {
     flex: 1,
     backgroundColor: background,
@@ -30,6 +31,8 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: muted,
   },
+
+  // ========= CABEÇALHO E DESTAQUE ================
   header: {
     backgroundColor: background,
   },
@@ -50,6 +53,8 @@ export const styles = StyleSheet.create({
     marginTop: 4,
     color: muted,
   },
+
+  // ========= GALERIA E CATEGORIAS ================
   gallery: {
     flex: 1,
     backgroundColor: background,
@@ -82,6 +87,8 @@ export const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginBottom: 8,
   },
+
+  // ========= CARD ================
   cards: {
     flex: 1,
   },
@@ -133,6 +140,8 @@ export const styles = StyleSheet.create({
     marginLeft: 8,
     flex: 1,
   },
+
+  // ========= PESQUISA E ESTADOS DA GALERIA ================
   loading: {
     marginTop: 32,
   },
@@ -146,6 +155,8 @@ export const styles = StyleSheet.create({
     marginBottom: 8,
     backgroundColor: surface,
   },
+
+  // ========= ACESSO ================
   accessContent: {
     flex: 1,
     justifyContent: 'center',
@@ -166,6 +177,8 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
     borderRadius: 9,
   },
+
+  // ========= LOGIN ================
   loginContainer: {
     flex: 1,
     backgroundColor: background,
@@ -194,6 +207,8 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 8,
   },
+
+  // ========= CADASTRO ================
   cadastroContainer: {
     flex: 1,
     backgroundColor: background,
@@ -223,6 +238,8 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 12,
   },
+
+  // ========= CABEÇALHO DO MENU ================
   menuHeader: {
     padding: 20,
     paddingTop: 28,
@@ -255,6 +272,8 @@ export const styles = StyleSheet.create({
   menuAction: {
     justifyContent: 'flex-start',
   },
+
+  // ========= PERFIL ================
   profileContent: {
     flex: 1,
     alignItems: 'center',
@@ -282,6 +301,8 @@ export const styles = StyleSheet.create({
   profileButton: {
     marginTop: 8,
   },
+
+  // ========= MODAL DE CONTEÚDO ================
   modal: {
     backgroundColor: surface,
     margin: 20,
