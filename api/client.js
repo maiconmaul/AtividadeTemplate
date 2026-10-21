@@ -1,6 +1,6 @@
 import Constants from 'expo-constants';
 
-export const API_BASE_URL = (Constants.expoConfig?.extra?.apiUrl || 'http://192.168.15.18:3000/api').replace(/\/$/, '');
+export const API_BASE_URL = (process.env.EXPO_PUBLIC_API_URL || Constants.expoConfig?.extra?.apiUrl || 'http://192.168.15.18:3000/api').replace(/\/$/, '');
 
 export async function request(path, { token, body, headers = {}, ...options } = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {

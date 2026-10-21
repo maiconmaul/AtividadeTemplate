@@ -30,6 +30,8 @@ npx expo start
 
 O app usa o endereço de API definido em `expo.extra.apiUrl` no `app.json`. O valor inicial (`http://192.168.15.18:3000/api`) corresponde ao computador usado no desenvolvimento deste projeto. Para testar em outro computador ou rede, altere o endereço para o IP local da máquina que executa a API e reinicie o Expo. Em celular e computador, ambos precisam estar na mesma rede.
 
+Se a porta 3000 já estiver ocupada, ajuste `PORT` no `backend/.env` e inicie o Expo com `EXPO_PUBLIC_API_URL=http://IP_DA_MAQUINA:PORTA/api npx expo start --port 8082`. Essa variável substitui o endereço do `app.json` sem alterar arquivos versionados.
+
 ## Rotas principais
 
 | Método | Rota | Acesso | Função |
