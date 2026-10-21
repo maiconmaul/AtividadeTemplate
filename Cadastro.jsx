@@ -9,6 +9,7 @@ import {
 } from 'react-native-paper';
 
 import { styles } from './css/Styles';
+import { useAuth } from './context/AuthContext';
 
 const Cadastro = ({ navigation }) => {
 
@@ -19,14 +20,19 @@ const Cadastro = ({ navigation }) => {
 
     const [mostrarSenha, setMostrarSenha] = React.useState(false);
     const [mostrarConfirmacao, setMostrarConfirmacao] = React.useState(false);
+    const [erro, setErro] = React.useState('');
+    const [carregando, setCarregando] = React.useState(false);
+    const { register } = useAuth();
 
-    const cadastrar = () => {
-
-        console.log('Nome:', nome);
-        console.log('E-mail:', email);
-        console.log('Senha:', senha);
-        console.log('Confirmar senha:', confirmarSenha);
-
+    const cadastrar = async () => {
+        setErro('');
+        if (senha !== confirmarSenha) return setErro('As senhas não coincidem.');
+        setCarregando(true);
+        try {
+            await register(nome, email, senha);
+            navigation.navigate('Home');
+        } catch (error) { setErro(error.message); }
+        finally { setCarregando(false); }
     };
 
     return (
@@ -38,7 +44,6 @@ const Cadastro = ({ navigation }) => {
             <Appbar.Header style={styles.header}>
 
                 <Appbar.BackAction
-                    iconColor="white"
                     onPress={() => navigation.goBack()}
                 />
 
@@ -60,6 +65,8 @@ const Cadastro = ({ navigation }) => {
                 >
                     Criar conta
                 </Text>
+
+                {!!erro && <Text style={styles.errorText}>{erro}</Text>}
 
 
                 <Text
@@ -161,6 +168,8 @@ const Cadastro = ({ navigation }) => {
                 <Button
                     mode="contained"
                     icon="account-plus"
+                    loading={carregando}
+                    disabled={carregando}
                     style={styles.cadastroButton}
                     onPress={cadastrar}
                 >

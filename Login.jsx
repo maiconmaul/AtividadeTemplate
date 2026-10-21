@@ -9,16 +9,25 @@ import {
 } from 'react-native-paper';
 
 import { styles } from './css/Styles';
+import { useAuth } from './context/AuthContext';
 
 const Login = ({ navigation }) => {
 
     const [email, setEmail] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [mostrarSenha, setMostrarSenha] = React.useState(false);
+    const [erro, setErro] = React.useState('');
+    const [carregando, setCarregando] = React.useState(false);
+    const { login } = useAuth();
 
-    const entrar = () => {
-        console.log('E-mail:', email);
-        console.log('Senha:', senha);
+    const entrar = async () => {
+        setErro('');
+        setCarregando(true);
+        try {
+            await login(email, senha);
+            navigation.navigate('Home');
+        } catch (error) { setErro(error.message); }
+        finally { setCarregando(false); }
     };
 
     return (
@@ -30,7 +39,6 @@ const Login = ({ navigation }) => {
             <Appbar.Header >
 
                 <Appbar.BackAction
-                    iconColor="black"
                     onPress={() => navigation.goBack()}
                 />
 
@@ -52,6 +60,8 @@ const Login = ({ navigation }) => {
                 >
                     Bem-vindo!
                 </Text>
+
+                {!!erro && <Text style={styles.errorText}>{erro}</Text>}
 
 
                 <Text
@@ -109,7 +119,9 @@ const Login = ({ navigation }) => {
                     mode="contained"
                     icon="login"
                     style={styles.loginButton}
-                    onPress={()=>navigation.navigate("Perfil")}
+                    loading={carregando}
+                    disabled={carregando}
+                    onPress={entrar}
                 >
                     ENTRAR
                 </Button>

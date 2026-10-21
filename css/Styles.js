@@ -1,176 +1,73 @@
 import { StyleSheet } from 'react-native';
 
+const background = '#101115';
+const surface = '#1b1d23';
+const text = '#f2f2f5';
+const muted = '#a9acb6';
+
 export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    logo: {
-        width: 300,
-        height: 300,
-        marginBottom: 20,
-        backgroundColor: 'gray',
-        borderRadius: 150,
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        color: '#0f0e0e',
-    },
-
-    subtitle: {
-        marginTop: 10,
-        fontSize: 16,
-        color: '#0d0d0d',
-    },
-    header: {
-        backgroundColor: '#C0C0C0',
-    },
-    tabs: {
-        height: 100,
-        flexGrow: 0,
-    },
-    tab: {
-        height: 45,
-        paddingHorizontal: 20,
-        marginHorizontal: 2,
-
-        justifyContent: 'center',
-        alignItems: 'center',
-
-        backgroundColor: '#FFFFFF',
-
-        borderWidth: 1,
-        borderColor: '#C0C0C0',
-
-        borderRadius: 5,
-        marginTop: 10,
-
-
-    },
-    tabText: {
-        color: '#0b0b0b',
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
-// ========= CARD  ================
-   
-    cards: {
-        flex: 1,
-    },
-
-    cardsContent: {
-        paddingHorizontal: 10,
-        paddingTop: 0,
-        paddingBottom: 30,
-    },
-
-    card: {
-        marginHorizontal: 0,
-        marginTop: 0,
-        marginBottom: 10,
-
-        borderRadius: 10,
-        backgroundColor: '#FFFFFF',
-
-        elevation: 4,
-    },
-// ========= ACESSO  ================
-  
-
-   acesso: {
-    padding: 25,
-    justifyContent: 'center',
-},
-acessoTitulo: {
-    textAlign: 'center',
-    fontWeight: 'bold',  
-    marginBottom: 10,
-},
-acessoTexto: {
-    textAlign: 'center',
-    marginBottom: 30,
-},
-acessoButton: {
-    marginBottom: 15,
-    borderRadius: 5,
-},
-
-// ========= LOGIN   ================
-
-loginContainer: {
-    flex: 1,
-    backgroundColor: '#EEEEEE',
-},
-
-loginContent: {
-    padding: 25,
-},
-
-loginTitulo: {
-    textAlign: 'center',
-    fontWeight: 'bold',
-    marginTop: 30,
-},
-
-loginTexto: {
-    textAlign: 'center',
-    marginTop: 5,
-    marginBottom: 30,
-},
-
-input: {
-    marginBottom: 15,
-    backgroundColor: '#FFFFFF',
-},
-
-loginButton: {
-    marginTop: 10,
-    marginBottom: 10,
-    borderRadius: 5,
-},
-// =========================
-// CADASTRO
-// =========================
-
-cadastroContainer: {
-    flex: 1,
-    backgroundColor: '#EEEEEE',
-},
-
-cadastroContent: {
-    padding: 25,
-},
-
-cadastroTitulo: {
-    textAlign: 'center',
-    fontWeight: 'bold',
-    marginTop: 20,
-},
-
-cadastroTexto: {
-    textAlign: 'center',
-    marginTop: 5,
-    marginBottom: 25,
-},
-
-input: {
-    marginBottom: 15,
-    backgroundColor: '#FFFFFF',
-},
-
-cadastroButton: {
-    marginTop: 10,
-    marginBottom: 10,
-    borderRadius: 5,
-},
-// ========= CABEÇALHO DO MENU ================
-menuHeader: {
-                padding: 20,
-                backgroundColor: '#C0C0C0',
-            }
-
+  screen: { flex: 1, backgroundColor: background },
+  container: { flex: 1, backgroundColor: background },
+  logo: { width: 300, height: 300, marginBottom: 20, borderRadius: 150 },
+  title: { fontSize: 24, fontWeight: 'bold', color: text },
+  subtitle: { marginTop: 10, fontSize: 16, color: muted },
+  header: { backgroundColor: background },
+  appTitle: { color: text, fontWeight: '700' },
+  hero: { paddingHorizontal: 20, paddingTop: 12, paddingBottom: 16 },
+  heroTitle: { color: text, fontWeight: '700' },
+  heroSubtitle: { marginTop: 4, color: muted },
+  gallery: { flex: 1, backgroundColor: background },
+  tabs: { maxHeight: 54, flexGrow: 0, marginBottom: 8 },
+  tabsContent: { alignItems: 'center', gap: 8, paddingHorizontal: 16 },
+  tab: { height: 42, paddingHorizontal: 18, marginHorizontal: 4, justifyContent: 'center', alignItems: 'center', backgroundColor: surface, borderRadius: 22 },
+  tabText: { color: text, fontSize: 14, fontWeight: 'bold' },
+  addButton: { marginHorizontal: 16, marginBottom: 8 },
+  cards: { flex: 1 },
+  cardsContent: { paddingHorizontal: 16, paddingBottom: 30 },
+  card: { marginTop: 8, marginBottom: 8, borderRadius: 14, backgroundColor: surface, overflow: 'hidden' },
+  cardTitle: { color: text, fontWeight: '700' },
+  cardSubtitle: { color: muted },
+  cardCover: { height: 210, marginHorizontal: 12, borderRadius: 10 },
+  imagePlaceholder: { height: 150, marginHorizontal: 12, borderRadius: 10, backgroundColor: '#252831', alignItems: 'center', justifyContent: 'center' },
+  placeholderText: { color: muted },
+  cardActions: { justifyContent: 'space-between', paddingHorizontal: 8 },
+  categoryLabel: { color: '#f3ad43', marginLeft: 8, flex: 1 },
+  loading: { marginTop: 32 },
+  emptyText: { color: muted, textAlign: 'center', padding: 30 },
+  searchInput: { margin: 16, marginBottom: 8, backgroundColor: surface },
+  accessContent: { flex: 1, justifyContent: 'center', paddingHorizontal: 24 },
+  accessTitle: { color: text, textAlign: 'center', fontWeight: '700', marginBottom: 8 },
+  accessText: { color: muted, textAlign: 'center', marginBottom: 28 },
+  accessButton: { marginBottom: 12, borderRadius: 9 },
+  loginContainer: { flex: 1, backgroundColor: background },
+  loginContent: { padding: 24 },
+  loginTitulo: { color: text, textAlign: 'center', fontWeight: 'bold', marginTop: 28 },
+  loginTexto: { color: muted, textAlign: 'center', marginTop: 5, marginBottom: 26 },
+  input: { marginBottom: 14, backgroundColor: surface },
+  loginButton: { marginTop: 10, marginBottom: 10, borderRadius: 8 },
+  cadastroContainer: { flex: 1, backgroundColor: background },
+  cadastroContent: { padding: 24 },
+  cadastroTitulo: { color: text, textAlign: 'center', fontWeight: 'bold', marginTop: 20 },
+  cadastroTexto: { color: muted, textAlign: 'center', marginTop: 5, marginBottom: 20 },
+  cadastroButton: { marginTop: 8, marginBottom: 10, borderRadius: 8 },
+  errorText: { color: '#ff6b70', textAlign: 'center', marginBottom: 12 },
+  menuHeader: { padding: 20, paddingTop: 28, backgroundColor: surface },
+  menuUser: { flexDirection: 'row', alignItems: 'center', paddingBottom: 16 },
+  menuAvatar: { backgroundColor: '#f3ad43' },
+  menuUserInfo: { flex: 1, marginLeft: 14 },
+  menuName: { color: text, fontWeight: 'bold' },
+  menuEmail: { color: muted, marginTop: 3 },
+  menuDivider: { marginBottom: 8, backgroundColor: '#343741' },
+  menuAction: { justifyContent: 'flex-start' },
+  profileContent: { flex: 1, alignItems: 'center', padding: 28, paddingTop: 50 },
+  profileAvatar: { backgroundColor: '#f3ad43', marginBottom: 16 },
+  profileName: { color: text, fontWeight: '700' },
+  profileEmail: { color: muted, marginTop: 6 },
+  profileNote: { color: muted, textAlign: 'center', marginVertical: 24, lineHeight: 22 },
+  profileButton: { marginTop: 8 },
+  modal: { backgroundColor: surface, margin: 20, padding: 20, borderRadius: 16 },
+  modalTitle: { color: text, marginBottom: 16, fontWeight: '700' },
+  modalButton: { marginVertical: 8 },
+  modalActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 8, marginTop: 12 },
+  previewImage: { height: 170, borderRadius: 10, marginVertical: 8 },
 });

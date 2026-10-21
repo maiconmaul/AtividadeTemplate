@@ -1,56 +1,22 @@
-import * as React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { Appbar } from 'react-native-paper';
+import React from 'react';
+import { View } from 'react-native';
+import { Appbar, Text } from 'react-native-paper';
 import { styles } from './css/Styles';
-import ModCard from './Cards';
+import ContentGallery from './ContentGallery';
+import { useAuth } from './context/AuthContext';
 
 const AppBar = ({ navigation }) => {
-    return (
-        <>
-            <Appbar.Header style={styles.header}>
-                <Appbar.Action icon="menu" iconColor="white" onPress={() => navigation.openDrawer()} />
-                <Appbar.Content title="Technologic" style={styles.title} />
-                <Appbar.Action icon="magnify"  onPress={() => navigation.navigate('Pesquisa')} />
-                <Appbar.Action icon="account" onPress={() => navigation.navigate('Acesso')} />
-            </Appbar.Header>
-
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={true}
-                style={styles.tabs}
-                contentContainerStyle={styles.tabsContent}>
-
-                <View style={styles.tab}>
-                    <Text style={styles.tabText}>TELA 01</Text>
-                </View>
-
-                <View style={styles.tab}>
-                    <Text style={styles.tabText}>TELA 02</Text>
-                </View>
-
-                <View style={styles.tab}>
-                    <Text style={styles.tabText}>TELA 03</Text>
-                </View>
-                <View style={styles.tab}>
-                    <Text style={styles.tabText}>TELA 04</Text>
-                </View>
-                <View style={styles.tab}>
-                    <Text style={styles.tabText}>TELA 05</Text>
-                </View>
-            </ScrollView>
-
-       
-
-            <ScrollView
-                style={styles.cards}
-                contentContainerStyle={styles.cardsContent}
-            >
-                <ModCard />
-                <ModCard />
-                <ModCard />
-            </ScrollView>
-        </>
-    );
-}
+  const { user } = useAuth();
+  return <View style={styles.screen}>
+    <Appbar.Header style={styles.header}>
+      <Appbar.Action icon="menu" onPress={() => navigation.getParent()?.openDrawer()} accessibilityLabel="Abrir menu" />
+      <Appbar.Content title="Technologic" titleStyle={styles.appTitle} />
+      <Appbar.Action icon="magnify" onPress={() => navigation.navigate('Pesquisa')} accessibilityLabel="Pesquisar" />
+      <Appbar.Action icon={user ? 'account-check' : 'account'} onPress={() => navigation.navigate(user ? 'Perfil' : 'Acesso')} accessibilityLabel="Conta" />
+    </Appbar.Header>
+    <View style={styles.hero}><Text variant="headlineSmall" style={styles.heroTitle}>Séries para assistir</Text><Text style={styles.heroSubtitle}>Descubra e acompanhe suas histórias favoritas.</Text></View>
+    <ContentGallery showCategories />
+  </View>;
+};
 
 export default AppBar;
