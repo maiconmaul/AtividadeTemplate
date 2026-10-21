@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   cardCover: { height: 210, marginHorizontal: 12, borderRadius: 10 },
   imagePlaceholder: { height: 150, marginHorizontal: 12, borderRadius: 10, backgroundColor: '#252831', alignItems: 'center', justifyContent: 'center' },
   placeholderText: { color: muted },
-  cardActions: { justifyContent: 'space-between', paddingHorizontal: 8 },
+  cardActions: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 8 },
   categoryLabel: { color: '#f3ad43', marginLeft: 8, flex: 1 },
   loading: { marginTop: 32 },
   emptyText: { color: muted, textAlign: 'center', padding: 30 },

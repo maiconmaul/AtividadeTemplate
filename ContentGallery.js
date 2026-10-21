@@ -12,10 +12,11 @@ export function ContentCard({ item, onEdit, onDelete, isAdmin }) {
   return <Card style={styles.card}>
     <Card.Title title={item.title} subtitle={item.subtitle || item.category} titleStyle={styles.cardTitle} subtitleStyle={styles.cardSubtitle} />
     {source ? <Card.Cover style={styles.cardCover} source={{ uri: source }} /> : <View style={styles.imagePlaceholder}><Text style={styles.placeholderText}>Sem imagem</Text></View>}
-    <Card.Actions style={styles.cardActions}>
+    <View style={styles.cardActions}>
       <Text style={styles.categoryLabel}>{item.category}</Text>
-      {isAdmin && <><IconButton icon="pencil" onPress={() => onEdit(item)} accessibilityLabel="Editar conteúdo" /><IconButton icon="delete" onPress={() => onDelete(item)} accessibilityLabel="Excluir conteúdo" /></>}
-    </Card.Actions>
+      {isAdmin && <IconButton icon="pencil" onPress={() => onEdit(item)} accessibilityLabel="Editar conteúdo" />}
+      {isAdmin && <IconButton icon="delete" onPress={() => onDelete(item)} accessibilityLabel="Excluir conteúdo" />}
+    </View>
   </Card>;
 }
 
